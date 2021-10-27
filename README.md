@@ -3,9 +3,9 @@
 The proposed Coverage-based Query Rewriting approach automatically rewrites a back-end transformation, defined in terms of a Select-Project-Join query, whose result violates some coverage constraints, into the "closest" query satisfying those constraints.
 
 The proposed approach is approximate and relies on a sample-based cardinality estimation, thus it introduces a trade-off between the accuracy and the efficiency of the process.
-For evaluating and quantifying the error that can be generated three grioups of measures have been introduced: the grid-based, the solution-based and the sample-based accuracy measures.
+For evaluating and quantifying the error that can be generated three groups of measures have been introduced: the grid-based, the solution-based and the sample-based accuracy measures.
 
-This repository contains both the code for running the proposed Coverage-based Query Rewriting algorithm and the proposed accuracy measures.
+This repository contains both the code for running the Coverage-based Query Rewriting algorithm and the proposed accuracy measures.
 
 The code is written in Python3.
 PostgreSQL is required to run this code (you can extend it to other DBMS)
