@@ -21,8 +21,8 @@ This repository is organized as follows:
 
 ### References
 
-- **Coverage-based Rewriting for Data Preparation**, C. Accinelli, S. Minisi and B. Catania. EDBT Workshop 2020
+- *Coverage-based Rewriting for Data Preparation*, C. Accinelli, S. Minisi and B. Catania. EDBT Workshop 2020
 
-- **The impact of rewriting on coverage constraint satisfaction** C. Accinelli, B. Catania, G. Guerrini and S. Minisi. EDBT Workshop 2021.
+- *The impact of rewriting on coverage constraint satisfaction* C. Accinelli, B. Catania, G. Guerrini and S. Minisi. EDBT Workshop 2021.
 
-- **covRew: a Python Toolkit for Pre-Processing Pipeline Rewriting Ensuring Coverage Constraint Satisfaction** C. Accinelli, B. Catania, G. Guerrini and S. Minisi. EDBT 2021.
+- *covRew: a Python Toolkit for Pre-Processing Pipeline Rewriting Ensuring Coverage Constraint Satisfaction* C. Accinelli, B. Catania, G. Guerrini and S. Minisi. EDBT 2021.
