@@ -20,8 +20,8 @@ The code is written in Python3. PostgreSQL is required to run this code (but you
 This repository is organized as follows:
 
 - *1_coverage_rewriting_sql.py* : code for running the three main variations of the rewriting algorithms (CRBase, CRBaseP, CRBaseI, CRBaseIP) (See [1] for further details)
-- *2_calc_measures_sol.py* : code for computing grid-based and solution-based measures (see [2] for further details)
-- *2_calc_measures_sample.py* : code for computing sample-based measures (see [2] for further details)
+- *2_calc_measures_sol.py* : code for computing grid-based and solution-based measures (See [2] for further details)
+- *2_calc_measures_sample.py* : code for computing sample-based measures (See [2] for further details)
 
 
 
