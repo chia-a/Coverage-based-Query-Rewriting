@@ -1,10 +1,10 @@
 # Coverage-based-Query-Rewriting
 
 
-We consider nondiscrimination expressed in terms of coverage constraints and its impact on data transformation, proposing solutions for detecting the bias, mitigating it, and checking whether the mitigation was effective. 
-*Coverage constraints* guarantee that the dataset includes enough examples for each (protected) category of interest, defined in terms of sensitive attribute values. 
+We consider nondiscrimination expressed in terms of coverage constraints and its impact on data transformation, proposing solutions for detecting the bias, mitigating it, and checking whether the mitigation was effective.
+*Coverage constraints* guarantee that the dataset includes enough examples for each (protected) category of interest, defined in terms of sensitive attribute values.
 
-The proposed Coverage-based Query Rewriting approach aims at guaranteeing that the result of a transformation, defined as a Select-Project-Join query, over a tabular dataset, satisfies a set of given coverage constraints. 
+The proposed Coverage-based Query Rewriting approach aims at guaranteeing that the result of a transformation, defined as a Select-Project-Join query, over a tabular dataset, satisfies a set of given coverage constraints.
 
 Specifically, given an SPJ query over a tabular dataset and a set of coverage constraints, the algorithm produce a rewritten query (that is the "closest" one to the input query) satisfying those constraints.
 
@@ -30,8 +30,8 @@ This repository is organized as follows:
 
 ### References
 
-- *Coverage-based Rewriting for Data Preparation*, C. Accinelli, S. Minisi and B. Catania. EDBT/ICDT Workshops 2020
+[1] *Coverage-based Rewriting for Data Preparation*, C. Accinelli, S. Minisi and B. Catania. EDBT/ICDT Workshops 2020
 
-- *The impact of rewriting on coverage constraint satisfaction* C. Accinelli, B. Catania, G. Guerrini and S. Minisi. EDBT/ICDT Workshops 2021.
+[2] *The impact of rewriting on coverage constraint satisfaction* C. Accinelli, B. Catania, G. Guerrini and S. Minisi. EDBT/ICDT Workshops 2021.
 
-- *covRew: a Python Toolkit for Pre-Processing Pipeline Rewriting Ensuring Coverage Constraint Satisfaction* C. Accinelli, B. Catania, G. Guerrini and S. Minisi. EDBT 2021.
+[3] *covRew: a Python Toolkit for Pre-Processing Pipeline Rewriting Ensuring Coverage Constraint Satisfaction* C. Accinelli, B. Catania, G. Guerrini and S. Minisi. EDBT 2021.
