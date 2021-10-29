@@ -1,28 +1,37 @@
 # Coverage-based-Query-Rewriting
 
-The proposed Coverage-based Query Rewriting approach automatically rewrites a back-end transformation, defined in terms of a Select-Project-Join query, whose result violates some coverage constraints, into the "closest" query satisfying those constraints.
+
+We consider nondiscrimination expressed in terms of coverage constraints and its impact on data transformation, proposing solutions for detecting the bias, mitigating it, and checking whether the mitigation was effective. 
+*Coverage constraints* guarantee that the dataset includes enough examples for each (protected) category of interest, defined in terms of sensitive attribute values. 
+
+The proposed Coverage-based Query Rewriting approach aims at guaranteeing that the result of a transformation, defined as a Select-Project-Join query, over a tabular dataset, satisfies a set of given coverage constraints. 
+
+Specifically, given an SPJ query over a tabular dataset and a set of coverage constraints, the algorithm produce a rewritten query (that is the "closest" one to the input query) satisfying those constraints.
+
+
 
 The proposed approach is approximate and relies on a sample-based cardinality estimation, thus it introduces a trade-off between the accuracy and the efficiency of the process.
-For evaluating and quantifying the error that can be generated three groups of measures have been introduced: the grid-based, the solution-based and the sample-based accuracy measures.
+For evaluating and quantifying the error that can be generated three groups of measures have been introduced: grid-based, solution-based and sample-based accuracy measures.
 
-This repository contains both the code for running the Coverage-based Query Rewriting algorithm and the proposed accuracy measures.
+This repository contains both the code for running the coverage-based query rewriting algorithm and computing the proposed accuracy measures.
 
-The code is written in Python3.
-PostgreSQL is required to run this code (you can extend it to other DBMS)
+The code is written in Python3. PostgreSQL is required to run this code (but you can easily replace it with another relational DBMS)
 
 
 ### Organization of the repository
 This repository is organized as follows:
 
-- *1_coverage_rewriting_sql.py* : this file contains the code for running CRBase and all the improved versions (CRBaseP, CRBaseI, CRBaseIP). Notice that in the code you will find also additional information needed for the experimental evaluation.
-- *2_calc_measures_sol.py* : this file contains the grid-based and the solution-based measures that have been defined for evaluating the solution of the proposed approach (for more details see the reference paper)
-- *2_calc_measures_sample.py* : this file contains the measures for evaluating the impact of the sample. Notice that you need to add the computation of the average values for obtaining the sample-based measures as discussed in the reference paper
+- *1_coverage_rewriting_sql.py* : code for running the three main variations of the rewriting algorithms (CRBase, CRBaseP, CRBaseI, CRBaseIP) (See [1] for further details)
+- *2_calc_measures_sol.py* : code for computing grid-based and solution-based measures (see [2] for further details)
+- *2_calc_measures_sample.py* : code for computing sample-based measures (see [2] for further details)
+
+
 
 
 ### References
 
-- *Coverage-based Rewriting for Data Preparation*, C. Accinelli, S. Minisi and B. Catania. EDBT Workshop 2020
+- *Coverage-based Rewriting for Data Preparation*, C. Accinelli, S. Minisi and B. Catania. EDBT/ICDT Workshops 2020
 
-- *The impact of rewriting on coverage constraint satisfaction* C. Accinelli, B. Catania, G. Guerrini and S. Minisi. EDBT Workshop 2021.
+- *The impact of rewriting on coverage constraint satisfaction* C. Accinelli, B. Catania, G. Guerrini and S. Minisi. EDBT/ICDT Workshops 2021.
 
 - *covRew: a Python Toolkit for Pre-Processing Pipeline Rewriting Ensuring Coverage Constraint Satisfaction* C. Accinelli, B. Catania, G. Guerrini and S. Minisi. EDBT 2021.
