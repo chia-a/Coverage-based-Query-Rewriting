@@ -14,15 +14,15 @@ PostgreSQL is required to run this code (you can extend it to other DBMS)
 ### Organization of the repository
 This repository is organized as follows:
 
-- *1_coverage_rewriting_sql.py* : this file contains the code for running CRBase and all the improved versions (CRBaseP, CRBaseI, CRBaseIP). Notice that in the code you will find also additional information needed for the experimental evaluation.
-- *2_calc_measures_sol.py* : this file contains the grid-based and the solution-based measures that have been defined for evaluating the solution of the proposed approach (for more details see the reference paper)
-- *2_calc_measures_sample.py* : this file contains the measures for evaluating the impact of the sample. Notice that you need to add the computation of the average values for obtaining the sample-based measures as discussed in the reference paper
+- *1_coverage_rewriting_sql.py* : this file contains the code for running CRBase and all the improved versions (CRBaseP, CRBaseI, CRBaseIP). Notice that in the code you will find also additional information needed for the experimental evaluation
+- *2_calc_measures_sol.py* : this file contains the grid-based and the solution-based measures that have been defined for evaluating the solution of the proposed approach (for more details see the reference paper [2])
+- *2_calc_measures_sample.py* : this file contains the measures for evaluating the impact of the sample. Notice that you need to add the computation of the average values for obtaining the sample-based measures as discussed in the reference paper [2]
 
 
 ### References
 
-- *Coverage-based Rewriting for Data Preparation*, C. Accinelli, S. Minisi and B. Catania. EDBT Workshop 2020
+[1] *Coverage-based Rewriting for Data Preparation*, C. Accinelli, S. Minisi and B. Catania. EDBT Workshop 2020
 
-- *The impact of rewriting on coverage constraint satisfaction* C. Accinelli, B. Catania, G. Guerrini and S. Minisi. EDBT Workshop 2021.
+[2] *The impact of rewriting on coverage constraint satisfaction* C. Accinelli, B. Catania, G. Guerrini and S. Minisi. EDBT Workshop 2021.
 
-- *covRew: a Python Toolkit for Pre-Processing Pipeline Rewriting Ensuring Coverage Constraint Satisfaction* C. Accinelli, B. Catania, G. Guerrini and S. Minisi. EDBT 2021.
+[3] *covRew: a Python Toolkit for Pre-Processing Pipeline Rewriting Ensuring Coverage Constraint Satisfaction* C. Accinelli, B. Catania, G. Guerrini and S. Minisi. EDBT 2021.
