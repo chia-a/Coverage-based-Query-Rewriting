@@ -16,7 +16,7 @@ np.set_printoptions(suppress=True)
 np.set_printoptions(threshold=sys.maxsize)
 
 
-## functions for the computation of the sample
+## functions for the sample
 def compute_sample_size(MCE, CL):
     return math.ceil(((norm.ppf(1 - (1 - CL)/2)**2)*(0.5**2))/MCE**2)
 
@@ -30,11 +30,17 @@ def do_sample(c, table, sample_size): #, attributes
     # sql = 'SELECT ' + ', '.join(attributes) + ' FROM ' + table + ' ORDER BY RANDOM() LIMIT ' + str(sample_size)
     return sqlio.read_sql_query(sql, c)
 
-# this function has been created for tests: in order to compare results in some cases we used the same sample in the database
+# these functions have been created for tests
+# for comparing results sometimes we fix the sample
 def do_synthetic_sample_(c, n):
     sql = 'SELECT * FROM sample_'+ n
     return sqlio.read_sql_query(sql, c)
 
+def do_synthetic_sample_dataset(c, n):
+    sql = 'SELECT * FROM '+ n
+    return sqlio.read_sql_query(sql, c)
+
+# for comparing results we need additional info
 def min_max_dataset(c, table, attrs):
     with c.cursor() as cursor:
         min_max_attrs = ', '.join(list(map(lambda x: 'MIN(' + x + '), MAX(' + x + ') ', attrs)))
@@ -46,10 +52,6 @@ def min_max_dataset(c, table, attrs):
             result += [{'attr': a,'min': float(query_result[0][count]), 'max': float(query_result[0][count + 1])}]
             count += 2
         return result
-
-def do_synthetic_sample_dataset(c, n):
-    sql = 'SELECT * FROM '+ n
-    return sqlio.read_sql_query(sql, c)
 ################
 
 # function that returns both the total cardinality and the cardinality for each value of the sensitive attribute
@@ -639,6 +641,8 @@ def cmg_query_ref(sample, relax_attributes, boolean_op, table_size, sample_size,
 
 
 def main():
+
+    #### YOU WILL FIND INPUT DATA IN LINES 654 (for setting the coverage constraint), 701 (for specifying the query) AND 732 (for setting the connection to the database)
 
     ## SETTING FOR THE PROCESSING
     pruning = True # pruning = False for CRBase, otherwise pruning = True (for CRBaseP and CRBaseIP)
