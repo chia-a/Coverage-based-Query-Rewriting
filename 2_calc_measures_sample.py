@@ -61,12 +61,40 @@ def normalized_query(row, val_newQ_sample):
 
 def main():
 
+    ## FOR COMPUTING THE SAMPLE-BASED MEASURES WE NEED THE RESULTS OBTAINED ON BOTH THE DATASET AND THE SAMPLE ##
+    # please use the output of 2_calc_measures_sol.py (for both the sample and the dataset): at the end of that file we compute the distance between the original query and the rewritten one
+    # if you do not want to compute the solution measures and you just want to compute the sample-based measures you need to uncomment the following code lines and comment lines
+
+    # algo_dataset0 = pd.read_csv('resultsCRBasePI_dataset.csv')
+    # algo_sample0 = pd.read_csv('resultsCRBasePI.csv')
+    #
+    # # DATASET # computation of the distance between the input query and the rewritten one for the DATASET
+    # algo_dataset_new = pd.DataFrame()
+    # for i,row in algo_dataset0.iterrows():
+    #     if (row['card_true_tot_Q'] != 'REWRITING IS NOT POSSIBLE') & (row['card_true_tot_Q'] != "CC IS ALREADY SATISFIED"):
+    #         row['card_true_sa_newQ'] = int(row['card_true_sa_newQ'][1:-1])
+    #         algo_dataset_new = algo_dataset_new.append(row)
+    #
+    # algo_dataset = distQ_Qnew(algo_dataset_new)
+    #
+    # # SAMPLE # computation of the distance between the input query and the rewritten one for the SAMPLE
+    # algo_sample_new = pd.DataFrame()
+    # for i,row in algo_sample0.iterrows():
+    #     if (row['card_true_tot_Q'] != 'REWRITING IS NOT POSSIBLE') & (row['card_true_tot_Q'] != "CC IS ALREADY SATISFIED"):
+    #         row['card_true_sa_newQ'] = int(row['card_true_sa_newQ'][1:-1])
+    #         algo_sample_new = algo_sample_new.append(row)
+    #
+    # algo_sample = distQ_Qnew(algo_sample_new)
+
+
+    #### INPUT #### insert here the name of your files ##
     algo_dataset = pd.read_csv('resultsCRBasePI_dataset_measures.csv')
     algo_sample = pd.read_csv('resultsCRBasePI_measures.csv')
+    #######
 
     # measures will be computed only in the case the rewritten query exists
     algo_sample = algo_sample[algo_sample['card_true_tot_Q'] != "CC IS ALREADY SATISFIED"]
-    #algo_sample = algo_sample[algo_sample['card_true_tot_Q'] != "REWRITING IS NOT POSSIBLE"]
+    algo_sample = algo_sample[algo_sample['card_true_tot_Q'] != "REWRITING IS NOT POSSIBLE"]
 
 
     algo_sample2 = pd.DataFrame()
@@ -95,6 +123,7 @@ def main():
         ##############################
         ######### PROXIMITY ##########
         ##############################
+        # dist_Qnew-Q is the distance between the input query and the rewritten one: the computation has been done in the file sample-based measures)
         row['dist_Qnew-Q_dataset'] = algo_dataset_tmp['dist_Qnew-Q'].values[0]
 
         row['proximity'] = abs(row['dist_Qnew-Q'] - row['dist_Qnew-Q_dataset'])
