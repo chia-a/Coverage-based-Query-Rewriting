@@ -642,7 +642,7 @@ def cmg_query_ref(sample, relax_attributes, boolean_op, table_size, sample_size,
 
 def main():
 
-    #### YOU WILL FIND INPUT DATA IN LINES 654 (for setting the coverage constraint), 701 (for specifying the query) AND 732 (for setting the connection to the database)
+    #### YOU WILL FIND INPUT DATA IN LINES 654 (for setting the coverage constraint), 701 (for specifying the query) AND 730 (for setting the connection to the database)
 
     ## SETTING FOR THE PROCESSING
     pruning = True # pruning = False for CRBase, otherwise pruning = True (for CRBaseP and CRBaseIP)
@@ -725,8 +725,6 @@ def main():
                         'val_orig': c.group(3).strip(),
                         'val': c.group(3).strip()
                     })
-
-                all_attributes = list(set([x['attr'] for x in relax_attributes])) + [sens_attr_list[0]]
 
                 # we set the connection to the database
                 c = psycopg2.connect(host= 'localhost', port= 5432, user= 'Insert_Here_Your_User', password= 'Insert_Here_Your_Password', database= 'postgres')
