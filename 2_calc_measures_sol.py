@@ -171,8 +171,8 @@ def normalized_query(row, val_newQ_sample):
 
 
 def main():
-    ## FOR COMPUTING THE SAMPLE-BASED MEASURES WE NEED THE RESULTS OBTAINED FROM 1_coverage_rewriting_sql.py ##
-    #### INPUT #### insert here the name of your files ##
+    ## FOR COMPUTING THE MEASURES WE NEED THE RESULTS OBTAINED FROM 1_coverage_rewriting_sql.py ##
+    #### INPUT #### insert here the name of your file ##
     algo = pd.read_csv('resultsCRBasePI.csv')
     # algo = pd.read_csv('resultsCRBasePI_dataset.csv')
     # print(algo.columns)
