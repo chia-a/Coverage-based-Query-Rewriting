@@ -105,7 +105,6 @@ def proximity(json_obj, sol, n_bin, val_dataset):
                 else:
                     norm_vals_bins += [((curr_max - i['bins'][j])/(curr_max-curr_min))]
         else:
-            # norm_vals_bins = [0] #qui ho sostituito questa riga on le due sotto
             for j in range(0, len(i['bins'])):
                 norm_vals_bins += [0]
         # print(norm_vals_sol, norm_vals_bins)
